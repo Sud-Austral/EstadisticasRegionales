@@ -61,7 +61,7 @@ def descarga():
     def homologacion(cod):
 
         dfFiltrado = dfHomologado[dfHomologado["Código Variable"] == str(cod)]
-        indx = df.index[0]
+        indx = dfFiltrado.index[0]
 
         glosa = dfFiltrado["Glosa Variable"][indx]
         return glosa
