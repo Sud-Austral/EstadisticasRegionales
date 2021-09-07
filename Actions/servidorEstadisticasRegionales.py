@@ -56,6 +56,16 @@ def descarga():
     _file2 = driver.find_element_by_xpath("/html/body/form/div[8]/div[3]/div[3]/div/div/div/div/div[2]/a[2]").get_attribute('href')
     time.sleep(5)
 
+    dfHomologado = pd.read_excel('Estadísticas Regionales/Tabla_Homologacion.xlsx')
+
+    def homologacion(cod):
+
+        dfFiltrado = dfHomologado[dfHomologado["Código Variable"] == str(cod)]
+        indx = df.index[0]
+
+        glosa = dfFiltrado["Glosa Variable"][indx]
+        return glosa
+
     try:
         filen1 = requests.get(_file1, allow_redirects=True)
         open('Estadísticas Regionales/estadísticas-regionales.xlsx', 'wb').write(filen1.content)
@@ -71,6 +81,9 @@ def descarga():
             df = df.drop(range(3))
 
             time.sleep(2)
+
+            df["Glosa Variable"] = df["Código Variable"].apply(lambda x: homologacion(x))
+
             df.to_excel('Estadísticas Regionales/estadísticas-regionales.xlsx', index=False)
 
             print('Proceso finalizado.')
