@@ -27,6 +27,9 @@ jobs:
 
         python Actions/servidorEstadisticasRegionales.py
 
+        rm geckodriver.exe
+        rm geckodriver.log
+
     - uses: stefanzweifel/git-auto-commit-action@v2
       with:
         commit_message: "Estadísticas regionales"
