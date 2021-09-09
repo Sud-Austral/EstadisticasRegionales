@@ -1,9 +1,9 @@
 name: Estad. Regionales
 
 on:
-    # push
-    schedule:
-      - cron:  '0 0 5 1-12 *'
+    push
+    # schedule:
+      # - cron:  '0 0 5 1-12 *'
       # “At 00:00 on day-of-month 5 in every month from January through December.” 
 
 jobs:
