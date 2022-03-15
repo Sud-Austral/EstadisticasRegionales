@@ -39,12 +39,15 @@ def descarga():
             driver = webdriver.Firefox()
             driver.delete_all_cookies()
 
+    print(1)
 
     time.sleep(30)
 
     information = driver.find_element_by_xpath("/html/body/form/div[8]/div[3]/div[1]/div/div/div/div[1]")
     information.click()
     time.sleep(5)
+
+    print(2)
 
     files = driver.find_element_by_xpath("/html/body/form/div[8]/div[3]/div[2]/div/div/div/div[4]/div/div/div")
     files.click()
@@ -53,10 +56,16 @@ def descarga():
     _file1 = driver.find_element_by_xpath("/html/body/form/div[8]/div[3]/div[3]/div/div/div/div/div[2]/a[1]").get_attribute('href')
     time.sleep(5)
 
+    print(3)
+
     _file2 = driver.find_element_by_xpath("/html/body/form/div[8]/div[3]/div[3]/div/div/div/div/div[2]/a[2]").get_attribute('href')
     time.sleep(5)
 
+    print(4)
+
     dfHomologado = pd.read_excel('Estadísticas Regionales/Tabla_Homologacion.xlsx')
+
+    print(5)
 
     def homologacion(cod):
 
