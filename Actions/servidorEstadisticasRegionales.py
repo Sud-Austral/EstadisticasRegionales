@@ -21,9 +21,10 @@ def getDriver(link):
     print('E')
     driver = webdriver.Firefox(options=options)
     print('F')
-    driver.set_page_load_timeout("60")
+    driver.set_page_load_timeout("600")
     print('G')
     driver.get(link)
+    print('Cargado')
     print('H')
     
     return driver
