@@ -85,6 +85,9 @@ def descarga():
             df["Glosa Variable"] = df["Código Variable"].apply(lambda x: homologacion(x))
 
             df.to_excel('Estadísticas Regionales/estadísticas-regionales.xlsx', index=False)
+            
+            df_final = pd.read_excel('Estadísticas Regionales/estadísticas-regionales.xlsx', skiprows=3)
+            df_final.to_excel('Estadísticas Regionales/estadísticas-regionales.xlsx', index=False)
 
             print('Proceso finalizado.')
 
@@ -98,9 +101,6 @@ def descarga():
         filen2 = requests.get(_file2, allow_redirects=True)
         open('Estadísticas Regionales/descriptor-de-campos.xlsx', 'wb').write(filen2.content)
         print('Archivo descriptor-de-campos.xlsx descargado correctamente')
-
-        df_final = pd.read_excel('Estadísticas Regionales/descriptor-de-campos.xlsx', skiprows=3)
-        df_final.to_excel('Estadísticas Regionales/descriptor-de-campos.xlsx', index=False)
 
     except:
         print('No se ha podido descargar el archivo: descriptor-de-campos.xlsx')
