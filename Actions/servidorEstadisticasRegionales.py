@@ -99,6 +99,9 @@ def descarga():
         open('Estadísticas Regionales/descriptor-de-campos.xlsx', 'wb').write(filen2.content)
         print('Archivo descriptor-de-campos.xlsx descargado correctamente')
 
+        df_final = pd.read_excel('Estadísticas Regionales/descriptor-de-campos.xlsx', skiprows=3)
+        df_final.to_excel('Estadísticas Regionales/descriptor-de-campos.xlsx', index=False)
+
     except:
         print('No se ha podido descargar el archivo: descriptor-de-campos.xlsx')
 
