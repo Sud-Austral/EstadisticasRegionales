@@ -106,6 +106,9 @@ def descarga():
 
             df.to_excel('Estadísticas Regionales/estadísticas-regionales.xlsx', index=False)
 
+            df_final_skip = pd.read_excel('Estadísticas Regionales/estadísticas-regionales.xlsx', skiprows=3)
+            df_final_skip.to_excel('Estadísticas Regionales/estadísticas-regionales.xlsx', index=False)
+
             print('Proceso finalizado.')
 
         except:
