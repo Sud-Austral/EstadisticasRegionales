@@ -85,9 +85,6 @@ def descarga():
             df["Glosa Variable"] = df["Código Variable"].apply(lambda x: homologacion(x))
 
             df.to_excel('Estadísticas Regionales/estadísticas-regionales.xlsx', index=False)
-            
-            df_final = pd.read_excel('Estadísticas Regionales/estadísticas-regionales.xlsx', skiprows=3)
-            df_final.to_excel('Estadísticas Regionales/estadísticas-regionales.xlsx', index=False)
 
             print('Proceso finalizado.')
 
