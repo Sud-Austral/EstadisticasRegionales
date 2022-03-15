@@ -38,16 +38,16 @@ def descarga():
     print("Gecko driver descargado")
 
     web = 0
-    while(web == 0):
-        try:
-            driver = getDriver(url)
-            time.sleep(30)
-            web = 1
-        except:
-            # webdriver.Firefox()
-            # driver.delete_all_cookies()
+    # while(web == 0):
+    try:
+        driver = getDriver(url)
+        time.sleep(30)
+        web = 1
+    except:
+        # webdriver.Firefox()
+        # driver.delete_all_cookies()
 
-            print('Error al cargar la URL')
+        print('Error al cargar la URL')
 
     print(1)
 
