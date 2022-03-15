@@ -10,13 +10,21 @@ url = "https://www.ine.cl/estadisticas/sociales/economia-regional/repositorio-de
 def getDriver(link):
     
     options = Options()
+    print('A')
     options.log.level = "trace"
+    print('B')
     options.add_argument("--headless")
+    print('C')
     options.set_preference("browser.download.manager.showWhenStarting", False)
+    print('D')
     options.set_preference("browser.helperApps.neverAsk.saveToDisk", "text/csv")
+    print('E')
     driver = webdriver.Firefox(options=options)
+    print('F')
     driver.set_page_load_timeout("60")
+    print('G')
     driver.get(link)
+    print('H')
     
     return driver
 
@@ -36,8 +44,10 @@ def descarga():
             time.sleep(30)
             web = 1
         except:
-            driver = webdriver.Firefox()
-            driver.delete_all_cookies()
+            # webdriver.Firefox()
+            # driver.delete_all_cookies()
+
+            print('Error al cargar la URL')
 
     print(1)
 
