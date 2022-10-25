@@ -8,7 +8,7 @@ from selenium.webdriver.firefox.options import Options
 url = "https://www.ine.cl/estadisticas/sociales/economia-regional/repositorio-de-estadisticas-regionales"
 
 def getDriver(link):
-    print("Vamos =)")
+    print("Vamos =) ")
     options = Options()
     print('A')
     options.log.level = "trace"
